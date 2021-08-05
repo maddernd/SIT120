@@ -1,0 +1,85 @@
+.images {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img1 {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+    .images {
+      justify-content: center;
+    }
+    .img1 {
+      justify-content: center;
+    }
+}
+.img1{
+  max-width: 50%;
+  max-height: 50%;
+}
+* {
+  box-sizing: border-box;
+}
+.topbanner{
+  color: black;
+  background-colour: gold;
+  padding:15px;
+  text-align:center;
+}
+.h1{
+  background-color: gold;
+  color: black;
+  background-colour: gold;
+  padding:15px;
+  text-align:center;
+}
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-colour: gold;
+}
+
+.menu a {
+  background-color: gold;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+}
+.findme{
+  float: bottom;
+  
+}
+.main {
+  float: left;
+  width: 60%;
+  height: 100%;
+  padding: 8px;
+  margin-top: 7px;
+  margin-left 7px;
+  margin-right 7px;
+  background-color: silver;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.right {
+  background-color: gold;
+  color: black;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
