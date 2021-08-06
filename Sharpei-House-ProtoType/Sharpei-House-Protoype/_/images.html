@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/styles/sharpei.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Sharpei House</a>
+  <div id="myLinks">
+    <a href="/SignIn.html">SignIn/Join</a>
+    <a href="/images.html">My pics</a>
+    <a href="/AllPics.html">All Pics</a>
+    <a href="/forum.html">Forum</a>
+    <a href="/medicalAdvice.html">Sharpei Advice</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="menu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+  <h3>My Pictures</h3>
+  <p>The App for all your Sharpei Needs.</p>
+     <div class="lb" v-if="items.length>0">
+        <div class="lb-grid" :class="[css,items.length>cells?'lb-grid-' + cells: 'lb-grid-' + items.length]">
+            <a class="lb-item" v-for="(src, i) in items" :href="items[i]" role="link" @click.prevent="show(i)" v-if="i<cells" :style="bg(src)">
+                <span class="lb-more" v-if="i==cells-1 && items.length - cells>0">{{ items.length - cells}}+</span>
+            </a>
+        </div>
+
+        <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <div class="lb-modal" v-if="index>=0">
+                <button class="btn btn-outline-danger btn-sm lb-modal-close" @click="close">
+                    <i class="fas far fa-times"></i>
+                </button>
+                <button class="btn btn-outline-primary lb-modal-prev" @click="prev">
+                    <i class="fas far fa-angle-left fa-2x"></i>
+
+                </button>
+                <button class="btn btn-outline-primary lb-modal-next" @click="next">
+                    <i class="fas far fa-angle-right fa-2x"></i>
+                </button>
+
+                <div class="lb-modal-img" @click="close">
+                    <img :src="src">
+                    <div class="spinner spinner-dots-wave" v-if="loading">
+                        <span class="badge badge-primary rounded-circle w-10 h-10">
+                            <i class="sr-only">&nbsp;</i>
+                        </span>
+                        <span class="badge badge-primary rounded-circle w-10 h-10">
+                            <i class="sr-only">&nbsp;</i>
+                        </span>
+                        <span class="badge badge-primary rounded-circle w-10 h-10">
+                            <i class="sr-only">&nbsp;</i>
+                        </span>
+                        <span class="badge badge-primary rounded-circle w-10 h-10">
+                            <i class="sr-only">&nbsp;</i>
+                        </span>
+                        <span class="badge badge-primary rounded-circle w-10 h-10">
+                            <i class="sr-only">&nbsp;</i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </div>
+</div>
+</div>
+
+<script src="/scripts/index.js">
+
+</script>
+
+</body>
+</html>
