@@ -6,8 +6,9 @@
 </template>
 
 <script>
+//import component used in this view
 import MyGallery from "@/components/MyGallery.vue";
-
+//export mysharpei
 export default {
   name: "mysharpei",
   components: {

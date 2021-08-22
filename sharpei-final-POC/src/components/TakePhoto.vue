@@ -23,6 +23,7 @@
         <li></li>
       </ul>
     </div>
+    <!--Vif and v show for camera open and camera is loading -->
     <div
       v-if="isCameraOpen"
       v-show="!isLoading"
@@ -45,6 +46,7 @@
         :height="337.5"
       ></canvas>
     </div>
+    <!--v if for camera open and loading -->
     <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
       <button type="button" class="button" @click="takePhoto">
         <!-- Camera icon from web, would like to use local image in main release -->
@@ -71,7 +73,8 @@ export default {
   //export as TakePhoto Component
   name: "TakePhoto",
   computed: {},
-  data() { //Return data for methods and V statemetns
+  data() {
+    //Return data for methods and V statemetns
     return {
       isCameraOpen: false,
       isPhotoTaken: false,
@@ -204,9 +207,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 500px;
+  //CSS for camera button
   .camera-button {
     margin-bottom: 2rem;
   }
+  //CSS for camera box and elements within
   .camera-box {
     .camera-shutter {
       opacity: 0;
@@ -317,7 +322,7 @@ body {
       border: 1px solid #ccc;
       border-radius: 4px;
       max-width: 50%;
-             .camera-button {
+      .camera-button {
         margin-bottom: 2rem;
       }
     }

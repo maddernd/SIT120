@@ -8,9 +8,10 @@
 </template>
 
 <script>
+//import components used in this view
 import MyGallery from "@/components/MyGallery.vue";
 import MyPhoto from "@/components/MyPhotos.vue";
-
+//export view as myphoto
 export default {
   name: "myphoto",
   components: {

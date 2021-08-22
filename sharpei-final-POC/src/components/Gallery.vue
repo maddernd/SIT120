@@ -35,9 +35,13 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 1rem;
-  max-width: 80rem;
-  margin: 5rem auto;
-  padding: 0 5rem;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 0;
+  padding: 0 0rem;
+  overflow-y: scroll;
+  padding-bottom: 150rem;
+  
 }
 
 .gallery-panel img {
@@ -50,10 +54,11 @@ export default {
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-gap: 1rem;
-    max-width: 80rem;
-    margin: 5rem auto;
-    padding: 0 5rem;
+    grid-gap: 0.5rem;
+    max-width: 100%;
+    margin: auto auto;
+    padding: 0 2rem;
+    overflow-y: overlay;
   }
 
   .gallery-panel img {

@@ -5,7 +5,7 @@
 
     <div class="lightbox-info">
       <div class="lightbox-info-inner">
-        <!--If ther eis a titel show it, if there is a location show it, if photographer show it -->
+        <!--If there is a titel show it, if there is a location show it, if photographer show it -->
         <p v-if="photo.title">{{ photo.title }}</p>
 
         <p v-if="photo.location">{{ photo.location }}</p>
@@ -57,6 +57,7 @@ export default {
 </script>
 
 <style>
+/*CSS for boxes to contain the iamges once clicked on desktop and mobile version */
 .lightbox {
   position: fixed;
   top: 0;
@@ -71,7 +72,8 @@ export default {
 
 .lightbox img {
   margin: auto;
-  width: 100%;
+  max-width: 70%;
+  max-height: 70%;
   grid-column-start: 2;
 }
 
@@ -80,8 +82,42 @@ export default {
 }
 
 .lightbox-info-inner {
-  background-color: #ffffff;
+  background-color: #ffc107;
   display: inline-block;
   padding: 2rem;
+}
+/*This needs more work and is not quite right yet */
+@media screen and (max-width: 759px) {
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 70%;
+    max-height: 70%;
+    background-color: #ffc107;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .lightbox img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    grid-column-start: 2;
+  }
+
+  .lightbox-info {
+    margin: auto 2rem auto 0;
+  }
+
+  .lightbox-info-inner {
+    background-color: #ffc107;
+    display: flex;
+    padding: 2rem;
+    max-height: 50%;
+    max-width: 50%;
+    text-size-adjust: 10%;
+  }
 }
 </style>

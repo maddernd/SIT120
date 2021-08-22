@@ -14,13 +14,17 @@
 </template>
 
 <script>
+//export home as home for routing
 export default {
   name: "home",
 };
 </script>
+
 <style scoped>
+/*CSS for home page*/
 .home {
   display: inline-block;
+  position: relative;
 }
 .homebutton {
   background-color: #ffc107;
@@ -58,6 +62,8 @@ export default {
     display: inline-block;
     max-width: 50%;
     max-height: 60%;
+    position: relative;
+    padding-left: 30%;
   }
 }
 </style>

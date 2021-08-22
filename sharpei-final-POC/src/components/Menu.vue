@@ -75,7 +75,6 @@ nav {
   }
   ul {
     //Lign up menu items and add shadowing to box
-
     display: flex;
     height: 100%;
     align-items: center;
@@ -87,6 +86,7 @@ nav {
     figure {
       cursor: pointer;
       margin-right: 10px;
+      
     }
     a {
       text-decoration: none;
@@ -125,9 +125,11 @@ nav {
       position: absolute;
       width: 300px;
       flex-direction: column;
+      max-height: 100%;
       left: -240px;
       transition: 300ms ease all;
       top: 50px;
+      background-color:#FFC107;
       &.active {
         left: 0px;
       }
@@ -141,6 +143,7 @@ nav {
         width: 100%;
         padding-left: 0;
         padding-right: 0;
+        background-color:#FFC107;
       }
       a {
         flex-direction: row;

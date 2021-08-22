@@ -10,19 +10,19 @@
       hoverBackground="#FFECB3"
     />
     <router-view class="comproute" />
-     <footer class="site-footer">
+    <!--Main website footer with contact details -->
+    <footer class="site-footer">
       <div class="container" background="#FFC107">
         <div class="row" background="#FFC107">
-          <div class="col-sm-12 col-md-6">
-            <h6>Contact</h6>
-            <p class="text-justify"><i>Daniel Maddern </i> Email: Maddernd@deakin.edu.au</p>
-         </div>
+          <div class="footer">
+            <p class="text-justify">
+              <i>Contact - Daniel Maddern </i> Email: Maddernd@deakin.edu.au
+            </p>
+          </div>
         </div>
       </div>
-        </footer>
-     
+    </footer>
   </div>
-  
 </template>
 
 <script>
@@ -80,13 +80,33 @@ export default {
 <style lang="scss">
 //Import the icons for unpkg that we use above
 @import "https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css";
+//CSS to display the routed component placement
 .comproute {
-  position: relative;
-  top: 20px;
-  overflow: hidden;
+  position: fixed;
+  top: 15%;
+  bottom: 15%;
 }
-.site-footer{
-  background-color:"#FFC107";
+//Footer contact info CSS
+.site-footer {
+  background-color: #ffc107;
+  position: fixed;
+  display: block;
+  font-size: 6pt;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  max-height: 5%;
+  font-size: 1;
+}
+.container {
+  background-color: "#FFC107";
+  height: 2%;
+  width: 100%;
+  text-align: center;
+}
+.text-justify {
+  font-size: 1;
 }
 
 figure {
@@ -100,7 +120,8 @@ body {
   margin: 0;
   position: flex;
   padding-top: 50px;
-  overflow-clip-margin: hidden;
+  //overflow-clip-margin: hidden;
+  overflow-y: hidden;
 }
 #app {
   font-family: "Montserrat", sans-serif;
@@ -108,6 +129,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow-y: hidden;
 }
 
 #nav {
@@ -120,9 +142,27 @@ body {
     }
   }
 }
+//Mobile CSS
 @media screen and (max-width: 759px) {
   .comproute {
     position: relative;
+    overscroll-behavior-x: hidden;
+  }
+  .site-footer {
+    background-color: #ffc107;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 2px 2px 2px #ccc;
+    text-align: center;
+  }
+  .container {
+    background-color: "#FFC107";
+    height: 5%;
+    width: 100%;
+    box-shadow: 2px 2px 2px #ccc;
+    text-align: center;
   }
 }
 </style>
