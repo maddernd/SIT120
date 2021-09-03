@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue slots - Named slots</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+   <section class="hero is-fullheight is-warning is-bold">
+     <div class="hero-body">
+       <div class="container">
+         <p class="title is-1">{{ title }}</p>
+         <p class="subtitle is-3">{{ subtitle }}</p>
+         <!-- IMport the title and subtitle via javascript from parent" -->
+        <test-slot>
+          <p slot="bottom">Sharpei at the Top we move to bottom</p>
+          <p>Sharpei World</p>
+          <p slot="top">Sharpei at the bottom</p>
+        </test-slot>
+        <slot-test><slot-test/c>
+       </div>
+     </div>
+  </section>
+</div>
+
+<script type="text/x-template" id="slot-test">
+  <div>
+    <slot name="top">
+    </slot>
+    <slot>
+      <p>Baby Shaprei</p>
+    </slot>
+    <slot name="bottom">
+    </slot>
+  </div>
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
